@@ -275,13 +275,11 @@ const Model = types
       serialize() {
         if (!isFF(FF_DEV_2432) && self.points.length < 3) return null;
         return {
-          original_width: self.parent.naturalWidth,
-          original_height: self.parent.naturalHeight,
-          image_rotation: self.parent.rotation,
+          ...self.parent.serializableValues(self.item_index),
           value: {
             points: self.points.map(p => [self.convertXToPerc(p.x), self.convertYToPerc(p.y)]),
             ...(isFF(FF_DEV_2432)
-              ? { closed : self.closed }
+              ? { closed: self.closed }
               : {}
             ),
           },
@@ -496,7 +494,7 @@ const HtxPolygonView = ({ item }) => {
   }
 
 
-  const dragProps = useMemo(()=>{
+  const dragProps = useMemo(() => {
     let isDragging = false;
 
     return {
@@ -511,7 +509,7 @@ const HtxPolygonView = ({ item }) => {
 
         item.annotation.history.freeze(item.id);
       },
-      dragBoundFunc: createDragBoundFunc(item, { x:-item.bboxCoords.left , y: -item.bboxCoords.top }),
+      dragBoundFunc: createDragBoundFunc(item, { x: -item.bboxCoords.left , y: -item.bboxCoords.top }),
       onDragEnd: e => {
         if (!isDragging) return;
         const t = e.target;

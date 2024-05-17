@@ -404,9 +404,7 @@ const Model = types
         }
 
         const res = {
-          original_width: object.naturalWidth,
-          original_height: object.naturalHeight,
-          image_rotation: object.rotation,
+          ...self.parent.serializableValues(self.item_index),
           value,
         };
 
@@ -479,7 +477,6 @@ const HtxBrushView = ({ item }) => {
 
   // Prepare brush stroke from RLE with current stroke color
   useEffect(async function() {
-
     // Two possible ways to draw an image from precreated data:
     // - rle - An RLE encoded RGBA image
     // - maskDataURL - an RGBA mask encoded as an image data URL that can be directly placed into
