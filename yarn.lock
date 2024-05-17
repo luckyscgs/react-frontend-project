@@ -2906,8 +2906,9 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
 
 "@types/strman@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/strman/-/strman-2.0.0.tgz#b5b4c4956e02848cd55291e29a6b2af8f98329ab"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/strman/-/strman-2.0.3.tgz#2cc5d3106b9cdc3f0e2681f2350b6af0ebf988ae"
+  integrity sha512-CnGRn6OdRB6j5aR6724bZYzMQsPBYCIW4TuRNdSHqwDKXgDbR1H6O0rtT7T5MRisyiBM/kNWxkEM++AWcRT+qQ==
 
 "@types/tough-cookie@*":
   version "4.0.2"
